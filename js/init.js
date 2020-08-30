@@ -7,6 +7,8 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 
+
+
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
@@ -40,8 +42,13 @@ var getJSONData = function(url){
     });
 }
 
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
-});
+
+//fincion que mostrara los datos del usuario en el nav, lo puse aquí porque todas las hojas HTMLestan asociadas a este js
+const nav = document.getElementById("menu")
+let nombreGuardado = JSON.parse(localStorage.getItem("usuario"));// vuelve texto el JSON que contiene el nombre del usuario
+
+if (nombreGuardado != null) {
+    nav.innerHTML += '<a class="py-2 d-none d-md-inline-block" href="index.html">' + nombreGuardado[0].usuario + ': Volver a entrar?</a>';
+};
+
+
