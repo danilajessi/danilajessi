@@ -49,7 +49,7 @@ function showProductList() {//crea div donde va a mostrar los objetos
             ((maxCount == undefined) || (maxCount != undefined && parseInt(procuct.cost) <= maxCount))) {
 
             htmlContentToAppend += `
-            <a href="category-info.html" class="list-group-item list-group-item-action"> <!––  linea que toma los datos para el filtrado por letras ––>
+            <a href="product-info.html" class="list-group-item list-group-item-action"> <!––  linea que toma los datos para el filtrado por letras ––>
                  <div class="row" data-filter-name= "` + procuct.name + `" data-filter-dat="` + procuct.description + `">
                 <div class="col-3">
                     <img src="` + procuct.imgSrc + `" alt="` + procuct.name + `" class="img-thumbnail">
