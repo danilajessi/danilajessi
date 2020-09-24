@@ -19,6 +19,8 @@ function showImagesGallery(array) {
     }
 }
 
+
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -31,16 +33,17 @@ document.addEventListener("DOMContentLoaded", function (e) {
             let productDescriptionHTML = document.getElementById("productDescription");
             let productCategoryHTML = document.getElementById("productCategory");
             let productSoldCountHTML = document.getElementById("productSoldCount");
-            let listAutoHTML = document.getElementById("productImagesGallery2");
+            //let listAutoHTML = document.getElementById("productImagesGallery2");
 
             productNameHTML.innerHTML = product.name;
             productDescriptionHTML.innerHTML = product.description;
             productCategoryHTML.innerHTML = ` <a href="category-info.html">` + product.category + `</a >`;
             productSoldCountHTML.innerHTML = product.soldCount;
-            listAutoHTML.innerHTML = product.relatedProducts;
+            //listAutoHTML.innerHTML = product.relatedProducts;
             
             //Muestro las imagenes en forma de galería
             showImagesGallery(product.images);
+            showRelatedProduct(product.relatedProducts);
         }
     });
 
@@ -52,6 +55,30 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
     });
 });
+
+function showRelatedProduct(carArray) {
+    getJSONData(PRODUCTS_URL).then(function (resultObj) {
+        if (resultObj.status === "ok") {
+            productList = resultObj.data;
+
+            let htmlContentToAppend = "";
+
+            for (let i = 0; i < carArray.length; i++) {
+                let relatedPosition = carArray[i];
+                let relatedProduct = productList[relatedPosition];
+
+                htmlContentToAppend += `
+                <div class="col-lg-3 col-md-4 col-6">
+                    <a href="product-info.html" >
+                    <div class="d-block mb-4 h-100">
+                    <img class="img-fluid img-thumbnail" src="` + relatedProduct.imgSrc + `" alt="">
+                    </div>
+                </div>`
+            }
+            document.getElementById("productImagesGallery2").innerHTML = htmlContentToAppend;
+        }
+    })
+}
 
 
 function showRelated(relatedArray) {
@@ -87,6 +114,8 @@ function showRelated(relatedArray) {
                 document.getElementById("comentarios").innerHTML = htmlRelated;
                 };            
 };
+
+
 /*
  * intenté mostrar loscomentarios nuevos, logré guasdar los datos en localStorage, pero no logré mostrarlo
 function dato() { 

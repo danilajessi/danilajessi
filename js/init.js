@@ -44,20 +44,16 @@ var getJSONData = function(url){
     });
 }
 
-
-//funcion que mostrara los datos del usuario en el nav, lo puse aquí porque todas las hojas HTMLestan asociadas a este js
+//funcion que mostrara los datos del usuario en el nav, lo puse aqu� porque todas las hojas HTMLestan asociadas a este js
 const nav = document.getElementById("menu")
 let nombreGuardado = JSON.parse(localStorage.getItem("usuario"));// vuelve texto el JSON que contiene el nombre del usuario
 
 if (nombreGuardado != null) {
-    nav.innerHTML += '<a class="py-2 d-none d-md-inline-block" href="index.html">' + nombreGuardado[0].usuario + ': Volver a entrar?</a>';
+    nav.innerHTML += `<button  class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">` + nombreGuardado[0].usuario + `
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+                      <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                      <a class="dropdown-item" href="index.html">Ir a entrada</a>
+                  </div>`;
 };
-
-
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-//document.addEventListener("DOMContentLoaded", function(e){
-
-//});
-
