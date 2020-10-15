@@ -39,17 +39,68 @@
             <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
             <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
             <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>            
-            <div  id="menu" class="dropdown">                
+            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+            <div id="menu" class="dropdown">
             </div>
         </div>
     </nav>
-    <div class="container p-5">
-        <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-            <h4 class="alert-heading">¡A trabajar! :)</h4>
-            <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-            <hr>
-            <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="container">
+        <div class="text-center p-4">
+            <h2>Carrito de compras</h2>
+        </div>
+        <!--productos-->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Costo</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="cart-products">
+            </tbody>
+        </table>
+        <h5 class="mb-3">Tipo de envio</h5>
+        <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+                <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+                <label class="custom-control-label" for="goldradio">Premium 2 a 5 días (15%)</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                <label class="custom-control-label" for="premiumradio">Express 5 a 8 días (7%)</label>
+            </div>
+            <div class="custom-control custom-radio">
+                <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                <label class="custom-control-label" for="standardradio">Standard 12 a 15 días (5%)</label>
+            </div>
+        </div>
+        <h5 class="mb-3">Dirección de envio</h5>
+        <div class="row">
+            <div class="col-md-3 mb-3">
+                <label for="zip">Calle</label>
+                <input type="text" class="form-control" placeholder="" required="" value="" min="">
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="state">Número</label>
+                <input type="number" class="form-control" placeholder="" required="" value="" min="">
+            </div>
+            <div class="col-md-7 mb-3">
+                <label for="state">Esquina</label>
+                <input type="text" class="d-block w-100" placeholder="" required="" value="" min="">
+            </div>
+        </div>
+        <!--Costos-->
+        <div class="row">
+            <div class="col">
+                <h5 class="mb-3">Costos</h5>
+                <ul class="list-group mb-3">
+                    <li  class="list-group-item justify-content-between d-flex"><h5>SubTotal </h5><span id="subT"></span></li>
+                    <li  class="list-group-item justify-content-between d-flex"><h5>Total </h5><span id="total"></span></li>
+                </ul>
+            </div>
         </div>
     </div>
     <div id="spinner-wrapper">
@@ -63,7 +114,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/dropzone.js"></script>
-    <script src="js/init.js"></script>   
+    <script src="js/init.js"></script>
     <script src="js/cart.js"></script>
 </body>
 
