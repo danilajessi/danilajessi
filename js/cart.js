@@ -24,7 +24,7 @@ function showCartProductsAndTotalCost(articles) {
 
 //primer calculo a mostrar
 function cuenta(array) {    
-    array[i].unitCost * array[i].count
+    array.unitCost * array.count;
 }
 
 // funcion que calcula el precio del producto y cambia la moneda para sumar los subtotales
