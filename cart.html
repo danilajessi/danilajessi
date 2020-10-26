@@ -44,6 +44,7 @@
             </div>
         </div>
     </nav>
+      
     <div class="container">
         <div class="text-center p-4">
             <h2>Carrito de compras</h2>
@@ -66,30 +67,72 @@
         <div class="d-block my-3">
             <div class="custom-control custom-radio">
                 <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
-                <label class="custom-control-label" for="goldradio">Premium 2 a 5 días (15%)</label>
+                <label class="custom-control-label " for="goldradio" value="goldradio" onclick="envio1();">Premium 2 a 5 días (15%)</label>
             </div>
             <div class="custom-control custom-radio">
-                <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
-                <label class="custom-control-label" for="premiumradio">Express 5 a 8 días (7%)</label>
+                <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="" value="premiumradio">
+                <label class="custom-control-label" for="premiumradio" onclick="envio2();">Express 5 a 8 días (7%)</label>
             </div>
             <div class="custom-control custom-radio">
-                <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-                <label class="custom-control-label" for="standardradio">Standard 12 a 15 días (5%)</label>
+                <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="" value="standardradio">
+                <label class="custom-control-label" for="standardradio" onclick="envio3();">Standard 12 a 15 días (5%)</label>
             </div>
         </div>
         <h5 class="mb-3">Dirección de envio</h5>
-        <div class="row">
-            <div class="col-md-3 mb-3">
-                <label for="zip">Calle</label>
-                <input type="text" class="form-control" placeholder="" required="" value="" min="">
+        <div class="modal-body">
+
+            <div class="row control" onsubmit="return validar();">
+                <div class="col-md-3 mb-3">
+                    <label for="zip">Calle</label>
+                    <input id="calle" type="text" class="form-control" placeholder="" required="" value="" min="">
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="state">Número</label>
+                    <input id="numero" type="number" class="form-control" placeholder="" required="" value="" min="">
+                </div>
+                <div class="col-md-7 mb-3">
+                    <label for="state">Esquina</label>
+                    <input id="esquina" type="text" class="d-block w-100" placeholder="" required="" value="" min="">
+                </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <label for="state">Número</label>
-                <input type="number" class="form-control" placeholder="" required="" value="" min="">
-            </div>
-            <div class="col-md-7 mb-3">
-                <label for="state">Esquina</label>
-                <input type="text" class="d-block w-100" placeholder="" required="" value="" min="">
+        </div>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            Forma de pago
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Dirección de envio</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" onsubmit="return validar2();">
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="zip">Moneda</label>
+                                <input id="moneda" type="text" class="form-control" placeholder="" required="" value="" min="">
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="state">Tarjeta</label>
+                                <input id="tarjeta" type="text" class="form-control" placeholder="" required="" value="" min="">
+                            </div>
+                            <div class="col-md-7 mb-3">
+                                <label for="state">Número</label>
+                                <input id="numero" type="number" class="d-block w-100" placeholder="" required="" value="" min="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" onclick ="validar2();" data-dismiss="modal">Guardar Cambios</button>
+                    </div>
+                </div>
             </div>
         </div>
         <!--Costos-->
@@ -97,25 +140,30 @@
             <div class="col">
                 <h5 class="mb-3">Costos</h5>
                 <ul class="list-group mb-3">
-                    <li  class="list-group-item justify-content-between d-flex"><h5>SubTotal </h5><span id="subT"></span></li>
-                    <li  class="list-group-item justify-content-between d-flex"><h5>Total </h5><span id="total"></span></li>
+                    <li class="list-group-item justify-content-between d-flex"><h5>SubTotal </h5><span id="subT"></span></li>
+                    <li class="list-group-item justify-content-between d-flex"><h5>Total </h5><span id="total"></span></li>
                 </ul>
             </div>
         </div>
-    </div>
-    <div id="spinner-wrapper">
-        <div class="lds-ring">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="row mb-3">
+            <button type="button" class="btn btn-primary" onclick ="validar();">
+                Validar Campos
+            </button>
         </div>
     </div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/dropzone.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/cart.js"></script>
+        <div id="spinner-wrapper">
+            <div class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/dropzone.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/cart.js"></script>
 </body>
 
 </html>
