@@ -49,12 +49,15 @@ function showProductList() {//crea div donde va a mostrar los objetos
             ((maxCount == undefined) || (maxCount != undefined && parseInt(procuct.cost) <= maxCount))) {
 
             htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action"> <!––  linea que toma los datos para el filtrado por letras ––>
-                 <div class="row" data-filter-name= "` + procuct.name + `" data-filter-dat="` + procuct.description + `">
-                <div class="col-3">
+            <a href="product-info.html" class="list-group-item list-group-item-action col-md-6 mb-4 col-sm-12 "> <!––  linea que toma los datos para el filtrado por letras ––>
+                <div class="row">
+                  
+                 <div class="" data-filter-name= "` + procuct.name + `" data-filter-dat="` + procuct.description + `">
+                
+                <div class="">
                     <img src="` + procuct.imgSrc + `" alt="` + procuct.name + `" class="img-thumbnail">
                 </div>
-                <div class="col">
+                <div class="">
                     <div class="d-flex w-100 justify-content-between">
                         <h4 class="mb-1">`+ procuct.name + `</h4>
                         <small class="text-muted">`+ procuct.soldCount + ` artículos</small>
@@ -63,8 +66,10 @@ function showProductList() {//crea div donde va a mostrar los objetos
                     <p> ` + procuct.description + ` </p>
                     <p> ` + procuct.currency + procuct.cost + ` </p>
                     </div>
+                    
                 </div>
             </div>
+</div>
             </a>
             `
         }

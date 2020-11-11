@@ -37,22 +37,62 @@
 </head>
 
 <body>
-    <nav class="site-header sticky-top py-1 bg-dark color">
-        <div id="menu" class="container d-flex flex-column flex-md-row justify-content-between">
-            <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-            <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-            <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>            
-            <div  id="menu" class="dropdown">                
-            </div>
+    <nav class="navbar  navbar-expand-sm navbar-dark bg-primary color ">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent03" aria-controls="navbarSupportedContent03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse  " id="navbarSupportedContent03">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active col-md-4">
+                    <a class="nav-link" href="home.html">Inicio</a>
+                </li>
+                <li class="nav-item active col-md-4">
+                    <a class="nav-link" href="categories.html">Categorías</a>
+                </li>
+                <li class="nav-item active col-md-4">
+                    <a class="nav-link" href="products.html">Productos</a>
+                </li>
+                <li class="nav-item active col-md-4">
+                    <a class="nav-link" href="sell.html">Vender</a>
+                </li>
+                <li class="nav-item active col-md-4">
+                    <a class="nav-link" href=""><div id="menu" class="dropdown"></div></a>
+                </li>
+            </ul>
         </div>
     </nav>
-    <div class="container p-5">
-        <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-            <h4 class="alert-heading">¡A trabajar! :)</h4>
-            <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-            <hr>
-            <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="container">
+        <div class="text-center p-4">
+            <h2>Mi Perfil</h2>
+            <h4>Datos personales</h4>
+        </div>
+        <form class="modal-body" id="for">
+            <div class="row control">
+                <div id"datos"></div>
+                <div class="col-md-5 mb-4 col-sm-12">
+                    <label for="nombres">Nombres:</label>
+                    <input id="nombre" type="text" class="form-control" placeholder="Ingresa tu nombre completo" name="nombre" required>
+                </div>
+                <div class="col-md-5 mb-4 col-sm-12">
+                    <label for="apellido">Apellidos:</label>
+                    <input id="apellido" type="text" class="form-control" placeholder="Ingresa tu apellido completo" name="apellido" required>
+                </div>
+                <div class="col-md-5 mb-4 col-sm-12">
+                    <label for="edad">Edad:</label>
+                    <input id="edad" type="number" class="form-control" placeholder="Ingresa tu edad" name="edad" required>
+                </div>
+                <div class="col-md-5 mb-4 col-sm-12">
+                    <label for="telefono">Telefono de contacto:</label>
+                    <input id="telefono" type="number" class="form-control" placeholder="Ingresa tu telefono" name="telefono" required>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit" onclick="datos()">Guardar</button>
+        </form>
+        <div class="col-md-5 mb-4 col-sm-12">
+            <label for="imagen">Linck de tu imagen de perfil</label>
+            <input id="imagen" type="text" class="form-control" placeholder="Ingresa tu imagen de perfil" name="imagen">
+            <div id="mostrarImagen"></div>
+            <button class="btn btn-primary" type="button" for="foto" id="imgBot" onclick="subirFoto()">Subir foto</button>
         </div>
     </div>
     <footer class="text-muted bg-light">
@@ -67,6 +107,7 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+
     <div id="spinner-wrapper">
         <div class="lds-ring">
             <div></div>
@@ -78,7 +119,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/dropzone.js"></script>
-    <script src="js/init.js"></script>    
+    <script src="js/init.js"></script>
     <script src="js/my-profile.js"></script>
 </body>
 

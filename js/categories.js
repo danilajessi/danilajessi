@@ -45,17 +45,17 @@ function showCategoriesList(){//crea div donde va a mostrar los objetos
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){//lo mismo que el anterios, pero depediendo del numero maximo que indique el usuario
             //crea el contenedor
             htmlContentToAppend += `
-            <a href="category-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
+            <a href="category-info.html" class="list-group-item list-group-item-action col-md-6 mb-4 col-sm-12">
+                <div class="col">
+                    <div class="">
                         <img src="` + category.imgSrc + `" alt="` + category.description + `" class="img-thumbnail">
                     </div>
-                    <div class="col">
+                    <div class="">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">`+ category.name +`</h4>
                             <small class="text-muted">` + category.productCount + ` artículos</small>
                         </div>
-                        <p class="mb-1">` + category.description + `</p>
+                        <p class="">` + category.description + `</p>
                     </div>
                 </div>
             </a>

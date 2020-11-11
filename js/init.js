@@ -49,9 +49,9 @@ const nav = document.getElementById("menu")
 let nombreGuardado = JSON.parse(localStorage.getItem("usuario"));// vuelve texto el JSON que contiene el nombre del usuario
 
 if (nombreGuardado != null) {
-    nav.innerHTML += `<button  class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">` + nombreGuardado[0].usuario + `
+    nav.innerHTML += `<button  class="btn btn-danger class="py-2 d-none d-md-inline-block p-2 bd-highlight" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">` + nombreGuardado[0].usuario + `
                   </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
                       <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
                       <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
                       <a class="dropdown-item" href="index.html">Ir a entrada</a>

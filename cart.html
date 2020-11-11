@@ -34,23 +34,36 @@
 </head>
 
 <body>
-    <nav class="site-header sticky-top py-1 color">
-        <div id="menu" class="container d-flex flex-column flex-md-row justify-content-between">
-            <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
-            <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-            <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-            <div id="menu" class="dropdown">
-            </div>
+    <nav class="navbar  navbar-expand-sm navbar-dark bg-primary color ">       
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent03" aria-controls="navbarSupportedContent03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse  " id="navbarSupportedContent03">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active col-md-4">
+                    <a class="nav-link" href="home.html">Inicio</a>
+                </li>
+                <li class="nav-item active col-md-4">
+                    <a class="nav-link" href="categories.html">Categorías</a>
+                </li>
+                <li class="nav-item active col-md-4">
+                    <a class="nav-link" href="products.html">Productos</a>
+                </li>
+                <li class="nav-item active col-md-4">
+                    <a class="nav-link" href="sell.html">Vender</a>
+                </li>
+                <li class="nav-item active col-md-4">
+                    <a class="nav-link" href=""><div id="menu" class="dropdown"></div></a>
+                </li>
+            </ul>           
         </div>
-    </nav>
-      
+    </nav>   
     <div class="container">
         <div class="text-center p-4">
             <h2>Carrito de compras</h2>
         </div>
         <!--productos-->
-        <table class="table">
+        <table class="table col-sm-12">
             <thead>
                 <tr>
                     <th scope="col"></th>
@@ -64,7 +77,7 @@
             </tbody>
         </table>
         <h5 class="mb-3">Tipo de envio</h5>
-        <div class="d-block my-3">
+        <div class="d-block my-3 col-sm-12">
             <div class="custom-control custom-radio">
                 <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
                 <label class="custom-control-label " for="goldradio" value="goldradio" onclick="envio1();">Premium 2 a 5 días (15%)</label>
@@ -79,8 +92,7 @@
             </div>
         </div>
         <h5 class="mb-3">Dirección de envio</h5>
-        <div class="modal-body">
-
+        <div class="modal-body ">
             <div class="row control" onsubmit="return validar();">
                 <div class="col-md-3 mb-3">
                     <label for="zip">Calle</label>
@@ -130,7 +142,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" onclick ="validar2();" data-dismiss="modal">Guardar Cambios</button>
+                        <button type="button" class="btn btn-primary" onclick="validar2();" data-dismiss="modal">Guardar Cambios</button>
                     </div>
                 </div>
             </div>
@@ -146,24 +158,24 @@
             </div>
         </div>
         <div class="row mb-3">
-            <button type="button" class="btn btn-primary" onclick ="validar();">
+            <button type="button" class="btn btn-primary" onclick="validar();">
                 Validar Campos
             </button>
         </div>
     </div>
-        <div id="spinner-wrapper">
-            <div class="lds-ring">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
+    <div id="spinner-wrapper">
+        <div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/dropzone.js"></script>
-        <script src="js/init.js"></script>
-        <script src="js/cart.js"></script>
+    </div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>
